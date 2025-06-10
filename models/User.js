@@ -1,9 +1,11 @@
+// backend/models/User.js
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
+  name: { type: String, required: true, unique: true },
+  email: { type: String, unique: false },
   password: { type: String, required: true },
-  isAdmin: { type: Boolean, default: false }
 });
 
 const User = mongoose.model('User', userSchema);
