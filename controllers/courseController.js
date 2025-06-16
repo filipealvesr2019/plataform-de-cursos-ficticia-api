@@ -8,5 +8,5 @@ exports.getCourses = async (req, res) => {
 exports.createCourses = async (req, res) => {
     const course = new Course(req.body);
     await course.save();
-    res.status(201).json(course)
+    res.status(201).json(course);
 }
